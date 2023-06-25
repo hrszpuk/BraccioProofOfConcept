@@ -23,3 +23,6 @@ In the frontend the user may type `rotate M2 90` (rotate Motor 2 90 degrees) and
 | M5        | Reference the M5 motor when rotating.                                          |   5    |
 | M6        | Reference the M6 motor when rotating.                                          |   6    |
 | DEFAULT   | Reference the default motor position (returns motor to its original position). |  999   |
+
+The major flaw for this design is that the motors can only be moved consecutively despite the fact the braccio library allows for motors to be controlled concurrently.
+In this case, the design could be scaled up to use a variable length 25-byte capacity instruction set (example: `R109021563045417751006099`).
