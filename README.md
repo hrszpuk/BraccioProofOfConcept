@@ -19,6 +19,3 @@ Typing "help" with come up with a list of commands and a brief explanation of ho
 
 ### Backend
 The backend of the project is a C++ Arduino script that listens for commands over the serial port.
-This can be automatically uploaded from the frontend.
-
-## Installation and running
