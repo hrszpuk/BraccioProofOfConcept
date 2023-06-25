@@ -6,6 +6,12 @@ Since it uses Arduino, I cannot control the arm in real-time.
 I must upload a C++ script to the controller *then* run it.
 This is really annoying and I think it would be much easier if I could control the robot arm in real time.
 
+
+
+https://github.com/hrszpuk/BraccioProofOfConcept/assets/107559570/00ae4d60-5464-45d1-b545-c815d44e7a2e
+
+
+
 This prototype will have a console-based interface and will be a predecessor to a fully graphical application (probably written in Java).
 For more information about how this works internally, checkout [COMMUNICATION.md](COMMUNICATION.md).
 
