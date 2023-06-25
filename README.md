@@ -1,7 +1,21 @@
-# Braccio Proof Of Concept
+# Braccio Controller Proof Of Concept
 A proof of concept for a robotic arm controller. Written in Python and C++.
 
 The main motivation behind this project is an issue I have with my robot arm.
 Since it uses Arduino, I cannot control the arm in real-time.
 I must upload a C++ script to the controller *then* run it.
 This is really annoying and I think it would be much easier if I could control the robot arm in real time.
+
+## Project Structure
+
+### Frontend
+The frontend of the project is a Python script designed to be used in the terminal.
+You'll use this interface to communicate with the Arduino.
+
+Typing "help" with come up with a list of commands and a brief explanation of how the program works.
+
+### Backend
+The backend of the project is a C++ Arduino script that listens for commands over the serial port.
+This can be automatically uploaded from the frontend.
+
+## Installation and running
