@@ -12,7 +12,7 @@ The final 3 bytes are used to represent the degrees the motor is moving.
 | SETUP          | Moves the Arduino into the default position.              |   S    |
 | ROTATE         | Tell the robot arm to rotate (`ROTATE [MOTOR] [DEGREES]`) |   R    |
 
-In the frontend the user may type `rotate M2 90` (rotate Motor 2 90 degrees) and it will be sent to the backend as `R1090`.
+In the frontend the user may type `rotate M2 90` (rotate Motor 2 90 degrees) and it will be sent to the backend as `R2090`.
 
 | Constants | Description                                                                    | Number |
 |-----------|--------------------------------------------------------------------------------|:------:|
