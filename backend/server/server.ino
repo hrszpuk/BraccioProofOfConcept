@@ -23,7 +23,6 @@ size_t dataLength = 5;
 int motor, degrees;
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
   Serial.setTimeout(1);
   Braccio.begin();
@@ -85,11 +84,8 @@ void loop() {
           default: Serial.print("Error: Invalid Instruction Byte");
         }
      }
-     
-    //the serial buffer is over just go to the line (or pass your favorite stop char)               
+                  
     Serial.println();
   }
-  
-  //slows down the visualization in the terminal
   delay(1000);
 }
