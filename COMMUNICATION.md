@@ -2,24 +2,24 @@
 In order to control the robot in real time we must have a way to communicate with it.
 The Arduino already has a serial port/cable for uploading scripts, so we may as well use that.
 
-| Command        | Description                                               |
-|----------------|-----------------------------------------------------------|
-| SETUP          | Moves the Arduino into the default position.              |
-| START          | Start sending rotation instructions to the arduino.       |
-| END            | Stop sending rotation instructions to the arduino.        |
-| ROTATE         | Tell the robot arm to rotate (`ROTATE [MOTOR] [DEGREES]`) |
-| SET_DEFAULT    | Sets the default position for the Arduino to move to.     |
+For this proof of concept I've decided to use 5 bytes to represent each instruction.
+The first byte is the instruction byte. This will be a letter such as `R` or `S`
+The second byte is the motor byte. This will be a digit representing a motor.
+The final 3 bytes are used to represent the degrees the motor is moving.
 
-In the frontend the user may type `rotate M2 90` (rotate Motor 2 90 degrees) and it will be sent to the backend.
+| Command        | Description                                               | Letter |
+|----------------|-----------------------------------------------------------|:------:|
+| SETUP          | Moves the Arduino into the default position.              |   S    |
+| ROTATE         | Tell the robot arm to rotate (`ROTATE [MOTOR] [DEGREES]`) |   R    |
 
-| Constants | Description                                                                   |
-|-----------|-------------------------------------------------------------------------------|
-| M1        | Reference the M1 motor when rotating.                                         |
-| M2        | Reference the M2 motor when rotating.                                         |
-| M3        | Reference the M3 motor when rotating.                                         |
-| M4        | Reference the M4 motor when rotating.                                         |
-| M5        | Reference the M5 motor when rotating.                                         |
-| M6        | Reference the M6 motor when rotating.                                         |
-| DEFAULT   | Reference the default motor position (returns motor to its original position. |
+In the frontend the user may type `rotate M2 90` (rotate Motor 2 90 degrees) and it will be sent to the backend as `R1090`.
 
-The frontend will keep track of the current motor value, calculate the new motor value, then send that value to the Arduino.
+| Constants | Description                                                                    | Number |
+|-----------|--------------------------------------------------------------------------------|:------:|
+| M1        | Reference the M1 motor when rotating.                                          |   1    |
+| M2        | Reference the M2 motor when rotating.                                          |   2    |
+| M3        | Reference the M3 motor when rotating.                                          |   3    |
+| M4        | Reference the M4 motor when rotating.                                          |   4    |
+| M5        | Reference the M5 motor when rotating.                                          |   5    |
+| M6        | Reference the M6 motor when rotating.                                          |   6    |
+| DEFAULT   | Reference the default motor position (returns motor to its original position). |  999   |
